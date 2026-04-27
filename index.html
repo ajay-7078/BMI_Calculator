@@ -1,32 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../styles.css" />
-    <script type="module" src="./scripts.js"></script>
     <title>BMI Calculator</title>
-  </head>
-  <body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
     <div class="container">
-      <h1>BMI Calculator</h1>
-      <form>
-        <p><label>Height in CM: </label><input type="text" id="height" /></p>
-        <p><label>Weight in KG: </label><input type="text" id="weight" /></p>
-          <button>Calculate</button>
-        <div id="results"></div>
-        <div id="weight-guide">
-          <h3>BMI Weight Guide</h3>
-          <p>Under Weight = Less than 18.6</p>
-          <p>Normal Range = 18.6 and 24.9</p>
-          <p>Overweight = Greater than 24.9</p>
-        </div>
-      
-      </form>
+        <!-- Header -->
+        <header class="header">
+            <div class="header-icon">📏</div>
+            <h1>BMI Calculator</h1>
+            <p>Calculate your Body Mass Index</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Form -->
+            <form class="bmi-form">
+                <div class="input-group">
+                    <label for="height">Height (CM)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="height" placeholder="Enter height in cm" min="0" />
+                        <span class="input-suffix">cm</span>
+                    </div>
+                    <small class="help-text">e.g., 175</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="weight">Weight (KG)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="weight" placeholder="Enter weight in kg" min="0" />
+                        <span class="input-suffix">kg</span>
+                    </div>
+                    <small class="help-text">e.g., 70</small>
+                </div>
+
+                <button type="submit" class="calculate-btn">Calculate BMI</button>
+            </form>
+
+            <!-- Results Section -->
+            <div id="results" class="results-section">
+                <!-- Results will be displayed here -->
+            </div>
+        </main>
+
+        <!-- BMI Guide -->
+        <section class="bmi-guide">
+            <h3>BMI Categories</h3>
+            <div class="guide-grid">
+                <div class="guide-card underweight">
+                    <span class="category">Underweight</span>
+                    <span class="range">&lt; 18.6</span>
+                </div>
+                <div class="guide-card normal">
+                    <span class="category">Normal</span>
+                    <span class="range">18.6 - 24.9</span>
+                </div>
+                <div class="guide-card overweight">
+                    <span class="category">Overweight</span>
+                    <span class="range">25.0 - 29.9</span>
+                </div>
+                <div class="guide-card obese">
+                    <span class="category">Obese</span>
+                    <span class="range">≥ 30</span>
+                </div>
+            </div>
+        </section>
     </div>
-  </body>
- 
+
+    <script src="scripts.js"></script>
+</body>
 </html>
